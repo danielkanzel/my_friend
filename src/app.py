@@ -1,7 +1,9 @@
 from src.adapters.todoist_adapter import TodoAdapter as TA
 from src.logic.todoist_logic import TodoLogic as TL
+from src.logic.typewriter_logic import TypewriterLogic as TW
 import configparser
 
+# Todoist methods
 
 def create_todo(todo_text):
     """
@@ -24,6 +26,24 @@ def get_todos():
     todos_raw = TA.get_tasks(token,project_id)
     return TL.todolist_format(todos_raw)
 
+
+# Typer methods
+
+def typer(command):
+    """
+    Controls typewriter sound
+    """
+    if command == "on":
+        TW.turn_on()
+        print("Озвучивание клавиш включено")
+    elif command == "off":
+        TW.turn_off()
+        print("Озвучивание клавиш выключено")
+    else:
+        print("Incorrect command")
+
+
+# Config method
 
 def get_from_config(function,name):
     """

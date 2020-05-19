@@ -23,5 +23,6 @@ setup(name='my_friend',
       [console_scripts]
       todo = my_friend.src.hooks.todo:main
       tasks = my_friend.src.hooks.tasks:main
+      typer = my_friend.src.hooks.typer:main
       """,
 )
